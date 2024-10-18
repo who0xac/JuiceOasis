@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="YourNamespace.Site" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juice Oasis</title>
+    <link rel="stylesheet" type="text/css" href="Styles/style.css" /> <!-- Correct path -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- Import Lobster font -->
+</head>
+<body>
+    <form runat="server">
+        <div class="header">
+            <img src="/Images/juicelogo.png" alt="Juice Oasis Logo" class="logo" />
+            <h1 class="brand-name">Juice Oasis</h1>
+            <nav>
+                <ul>
+                    <li><a href="Default.aspx" class="<%= Request.Path.EndsWith("Default.aspx") ? "active" : "" %>">Home</a></li>
+                    <li><a href="Juice.aspx" class="<%= Request.Path.EndsWith("Juice.aspx") ? "active" : "" %>">Juices</a></li>
+                    <li><a href="About.aspx" class="<%= Request.Path.EndsWith("About.aspx") ? "active" : "" %>">About Us</a></li>
+                    <li><a href="Contact.aspx" class="<%= Request.Path.EndsWith("Contact.aspx") ? "active" : "" %>">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        <div class="footer">
+            <p>&copy; 2024 Juice Oasis. All rights reserved.</p>
+        </div>
+    </form>
+</body>
+</html>

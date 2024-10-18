@@ -1,0 +1,309 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #ff6f3c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:30px;
+}
+
+.logo {
+    width: 80px; /* Adjusted logo size */
+    margin-right: 15px;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    margin: 0; /* Remove margin */
+    font-family: 'Lobster', cursive; /* Beautiful font for brand name */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slideshow-container {
+    margin-top: 20px;
+    position: relative;
+    max-width: 90%; /* Make the slideshow take 90% of the width */
+    margin: auto;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.mySlides {
+    display: none;
+}
+
+    .mySlides img {
+        width: 100%; /* Make images responsive */
+        max-height: 400px; /* Set a maximum height to prevent full-screen */
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+
+.description {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.juice-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Wrap cards on smaller screens */
+    margin: 20px;
+}
+
+.juice-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+    .juice-card img {
+        width: 100%; /* Make images responsive */
+        height: 150px; /* Set a fixed height for juice card images */
+        border-radius: 10px;
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+
+    .juice-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .juice-card p {
+        color: #777;
+    }
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Space between content and footer */
+}
+
+/* Navigation Styles */
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align nav items horizontally */
+}
+
+    .header nav ul li {
+        margin: 0 15px;
+    }
+
+        .header nav ul li a {
+            color: white; /* Change link color to white */
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+            .header nav ul li a:hover {
+                color: #ffe600; /* Change color on hover */
+            }
+
+            .header nav ul li a.active {
+                font-weight: bold; /* Make active link bold */
+                text-decoration: underline; /* Underline active link */
+            }
+
+/* Slideshow Styles */
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+/* Importing Lobster font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Heading Styles */
+.juice-heading {
+    font-size: 2.5rem; /* Increase font size */
+    color: #ff6f3c; /* Match with header background color */
+    text-align: center; /* Center the heading */
+    margin: 20px 0; /* Add some margin above and below */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    font-family: 'Lobster', cursive; /* Use the Lobster font */
+    border-bottom: 2px solid #ffe600; /* Bottom border for emphasis */
+    padding-bottom: 10px; /* Space between text and border */
+}
+.about-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.about-image {
+    position: relative;
+}
+
+    .about-image img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 400px; /* Set a maximum height */
+    }
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+.contact-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.contact-image {
+    position: relative;
+}
+
+    .contact-image img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 400px; /* Set a maximum height */
+    }
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact-form {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px; /* Limit form width */
+    margin-left: auto;
+    margin-right: auto; /* Center the form */
+}
+
+    .contact-form label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+        .contact-form input[type="submit"] {
+            background-color: #ff6f3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form input[type="submit"]:hover {
+                background-color: #e55a2d; /* Darker shade on hover */
+            }
+.juice-container {
+    display: flex;
+    margin: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
+
+    .sidebar h3 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar button {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #ff6f3c;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+        .sidebar button:hover {
+            background-color: #e55a2d; /* Darker shade on hover */
+        }
+
+.juice-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-around;
+    width: 80%;
+    padding: 20px;
+}
+
+.juice-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+    .juice-card img {
+        width: 100%; /* Make images responsive */
+        height: 150px; /* Set a fixed height for juice card images */
+        border-radius: 10px;
+        object-fit: cover; /* Maintain aspect ratio */
+    }
+
+    .juice-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .juice-card p {
+        color: #777;
+    }
