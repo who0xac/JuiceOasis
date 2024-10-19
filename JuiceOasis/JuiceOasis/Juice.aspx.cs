@@ -14,11 +14,17 @@ namespace JuiceOasis
         {
             if (!IsPostBack)
             {
-                FetchJuices();
+                FetchJuices("All"); // Load all juices by default
             }
         }
 
-        private void FetchJuices()
+        protected void btnFilter_Click(object sender, EventArgs e)
+        {
+            string category = ((System.Web.UI.WebControls.Button)sender).CommandArgument;
+            FetchJuices(category); // Fetch juices based on the selected category
+        }
+
+        private void FetchJuices(string category)
         {
             Juices = new List<JuiceItem>();
             string connectionString = ConfigurationManager.ConnectionStrings["JuiceDBConnectionString"].ConnectionString;
@@ -28,10 +34,21 @@ namespace JuiceOasis
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Name, Description, ImageUrl, Category, Availability FROM dbo.Juice"; // Ensure this matches your table structure
+                    string query = "SELECT Name, Description, ImageUrl, Category, Availability, Price FROM dbo.Juice";
+
+                    // Apply filter if a specific category is selected
+                    if (category != "All")
+                    {
+                        query += " WHERE Category = @Category"; // Filter by category
+                    }
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        if (category != "All")
+                        {
+                            command.Parameters.AddWithValue("@Category", category); // Pass the parameter value
+                        }
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -42,29 +59,27 @@ namespace JuiceOasis
                                     Description = reader["Description"].ToString(),
                                     ImageUrl = reader["ImageUrl"].ToString(),
                                     Category = reader["Category"].ToString(),
-                                    Availability = reader["Availability"].ToString() // Fetch Availability
+                                    Availability = reader["Availability"].ToString(),
+                                    Price = Convert.ToDecimal(reader["Price"])
                                 });
                             }
                         }
                     }
                 }
 
-                if (Juices.Count == 0)
-                {
-                    Console.WriteLine("No data found in the Juice table.");
-                }
-                else
-                {
-                    Console.WriteLine($"Number of juices retrieved: {Juices.Count}");
-                }
+                // Bind data to Repeater control
+                repeaterJuices.DataSource = Juices;
+                repeaterJuices.DataBind();
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("SQL Error: " + ex.Message);
+                // Handle SQL-related errors
+                Response.Write("<script>alert('SQL Error: " + ex.Message + "');</script>");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Unexpected Error: " + ex.Message);
+                // Handle general errors
+                Response.Write("<script>alert('Unexpected Error: " + ex.Message + "');</script>");
             }
         }
 
@@ -74,7 +89,8 @@ namespace JuiceOasis
             public string Description { get; set; }
             public string ImageUrl { get; set; }
             public string Category { get; set; }
-            public string Availability { get; set; } // Availability field
+            public string Availability { get; set; }
+            public decimal Price { get; set; }
         }
     }
 }
