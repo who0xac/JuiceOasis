@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="JuiceOasis.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Juice Oasis</title>
+    <link href="Styles/adminStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="admin-header">
+            <div class="header-left">
+                <img src="Images/juicelogo.png" alt="Juice Oasis Logo" class="logo" />
+                <span class="brand-name">Juice Oasis</span>
+            </div>
+                <span>Welcome, Admin</span>
+            <div class="header-right">
+                <asp:Button ID="btnAddJuice" runat="server" CssClass="add-button" Text="Add Juice" OnClick="btnAddJuice_Click" />
+                <asp:Button ID="btnLogout" runat="server" CssClass="logout-button" Text="Logout" OnClick="btnLogout_Click" />
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        
+    </form>
+</body>
+</html>
