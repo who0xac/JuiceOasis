@@ -1,13 +1,9 @@
-# Juice Oasis Management System
-
-Juice Oasis Management System is a web application developed with ASP.NET Web Forms (.NET Framework) and MySQL. The system is designed to help administrators efficiently manage juice inventory, categorize items, and track sales, with full CRUD functionality and a streamlined user interface.
+# Juice Oasis 
+Juice Oasis is a web application developed with ASP.NET Web Forms (.NET Framework) and MySQL. The system is designed to help administrators efficiently manage juice inventory, categorize items, and track sales, with full CRUD functionality and a streamlined user interface.
 
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-
-
 ---
 
 ## Features
@@ -39,9 +35,4 @@ Juice Oasis Management System is a web application developed with ASP.NET Web Fo
 - **Languages**: C#, HTML, CSS, JavaScript
 - **Other Tools**: ADO.NET for database connectivity
 
-## Installation
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/juice-oasis-management-system.git
-   cd juice-oasis-management-system
