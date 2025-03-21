@@ -2,15 +2,6 @@
 
 Juice Oasis is a comprehensive web application developed with ASP.NET Web Forms (.NET Framework) and MySQL. The system provides administrators with powerful tools to efficiently manage juice inventory, categorize items, and track sales through a user-friendly interface with complete CRUD functionality.
 
-## 📋 Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-
-
 ## ✨ Features
 
 ### 🔐 User Authentication
