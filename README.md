@@ -74,7 +74,7 @@ Juice Oasis is a comprehensive web application developed with ASP.NET Web Forms 
 
 1. Clone the repository
    ```
-   git clone https://github.com/GarudaR007X/juice-oasis.git
+   git clone https://github.com/who0xac/juice-oasis.git
    ```
 
 2. Open the solution file (`JuiceOasis.sln`) in Visual Studio
